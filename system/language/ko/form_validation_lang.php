@@ -1,0 +1,19 @@
+<?php
+$lang['required'] = '%s 필드는 반드시 입력해야 합니다.';
+$lang['isset'] = '%s 필드는 값이 있어야 합니다.';
+$lang['valid_email'] = '%s 필드에 유효한 이메일주소를 입력해 주세요';
+$lang['valid_emails'] = '%s 필드에 유효한 이메일주소들을 입력해 주세요';
+$lang['valid_url'] = '%s 필드에 유효한 URL을 입력해 주세요.';
+$lang['valid_ip'] = '%s 필드에 유효한 IP를 입력해 주세요.';
+$lang['min_length'] = '%s 필드는 최소한 %s 글자 이상이어야 합니다.';
+$lang['max_length'] = '%s 필드는 최대 %s 글자를 초과할 수 없습니다.';
+$lang['exact_length'] = '%s 필드는 정확히 %s 글자이어야 합니다.';
+$lang['alpha'] = '%s 필드는 영문자만 포함해야합니다.';
+$lang['alpha_numeric'] = '%s 필드는 영문과 숫자만 포함해야 합니다.';
+$lang['alpha_dash'] = '%s 필드는 영문,숫자,_,-만 포함해야 합니다.';
+$lang['numeric'] = '%s 필드는 숫자만 포함해야 합니다.';
+$lang['is_numeric'] = '%s 필드는 숫자만 포함해야 합니다.';
+$lang['integer'] = '%s 필드는 숫자(정수)만 포함해야 합니다.';
+$lang['matches'] = '%s 필드와 %s 필드가 일치 하지 않습니다.';
+$lang['is_natural'] = '%s 필드는 숫자만 포함해야 합니다.';
+$lang['is_natural_no_zero'] = '%s 필드는 0이상의 숫자만 포함해야 합니다.';
