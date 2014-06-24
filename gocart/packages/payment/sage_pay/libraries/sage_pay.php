@@ -84,48 +84,48 @@ class Sage_pay
 
 			return $form;
 
-			} else return array();
+        } else return array();
 
-			return $form;
-		}
+        return $form;
+    }
 
-		public function checkout_check(){
+    public function checkout_check(){
 
-			//load credit card helper
-			$this->CI->load->helper('credit_card_helper');
+        //load credit card helper
+        $this->CI->load->helper('credit_card_helper');
 
-			$error_msg = lang('fix_errors')."<br/><ul>";
-			$error_list = "";
+        $error_msg = lang('fix_errors')."<br/><ul>";
+        $error_list = "";
 
-			//Verify name field
-			if( empty($_POST["CardHolder"])) 
-				$error_list .= "<li>".lang('enter_name')."</li>";
+        //Verify name field
+        if( empty($_POST["CardHolder"]))
+            $error_list .= "<li>".lang('enter_name')."</li>";
 
-			//Verify date
-			if( !card_expiry_valid($_POST["ExpiryDate_mm"], $_POST["ExpiryDate_yy"]) )
-				$error_list .= "<li>".lang('fix_exp_date')."</li>";
+        //Verify date
+        if( !card_expiry_valid($_POST["ExpiryDate_mm"], $_POST["ExpiryDate_yy"]) )
+            $error_list .= "<li>".lang('fix_exp_date')."</li>";
 
-			//Verify card number
-			if( empty($_POST["CardNumber"]) || !card_number_valid($_POST["CardNumber"]) )
-				$error_list .= "<li>".lang('fix_card_num')."</li>";
+        //Verify card number
+        if( empty($_POST["CardNumber"]) || !card_number_valid($_POST["CardNumber"]) )
+            $error_list .= "<li>".lang('fix_card_num')."</li>";
 
-			//Verify security code
-			if( empty($_POST["CV2"]))
-			{
-				$error_list .= "<li>".lang('enter_cvv')."</li>";
-			}
+        //Verify security code
+        if( empty($_POST["CV2"]))
+        {
+            $error_list .= "<li>".lang('enter_cvv')."</li>";
+        }
 
-			// We need to store the credit card information temporarily
-			$sp_tmp_data["sp_data"] = $_POST;
-			$this->CI->session->set_userdata($sp_tmp_data);
+        // We need to store the credit card information temporarily
+        $sp_tmp_data["sp_data"] = $_POST;
+        $this->CI->session->set_userdata($sp_tmp_data);
 
-			if( $error_list ) 
-				return $error_msg . $error_list . "</ul>";
-			else 
-			{
-				return false;
-			}
-		}
+        if( $error_list )
+            return $error_msg . $error_list . "</ul>";
+        else
+        {
+            return false;
+        }
+    }
 
 	/**
 	* payment module description
@@ -136,11 +136,11 @@ class Sage_pay
 		//this will be added to the database upon order confirmation
 
 /*
-	access the payment information with the  $_POST variable since this is called
-	from the same place as the checkout_check above.
+	   access the payment information with the  $_POST variable since this is called
+	   from the same place as the checkout_check above.
 */
 
-	return 'Sage Pay';
+	   return 'Sage Pay';
 
 	}
 
