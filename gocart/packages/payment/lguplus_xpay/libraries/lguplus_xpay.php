@@ -49,6 +49,8 @@ class Lguplus_xpay
              * 기본정보를 변경하여 주시기 바랍니다.(파라미터 전달시 POST를 사용하세요)
              */
 
+            $cartContent = array_values($cart_contents);
+
             $pdata['cst_platform']              = $settings['cst_platform'];      //LG유플러스 결제 서비스 선택(test:테스트, service:서비스)
             $pdata['cst_mid']                   = $settings['cst_mid'];           //상점아이디(LG유플러스으로 부터 발급받으신 상점아이디를 입력하세요)
                                                                                 //테스트 아이디는 't'를 반드시 제외하고 입력하세요.
@@ -56,7 +58,7 @@ class Lguplus_xpay
             $pdata['lgd_oid']                   = "test1234";           //주문번호(상점정의 유니크한 주문번호를 입력하세요)
             $pdata['lgd_amount']                = $this->CI->go_cart->total();    //결제금액("," 를 제외한 결제금액을 입력하세요)
             $pdata['lgd_buyer']                 = $customer['lastname']." ".$customer['firstname'];         //구매자명
-            $pdata['lgd_productinfo']           = sprintf (lang('product_name'), array_values($cart_contents)[0]['name'], sizeof($cart_contents));;   //상품명
+            $pdata['lgd_productinfo']           = sprintf (lang('product_name'), $cartContent[0]['name'], sizeof($cart_contents));;   //상품명
             $pdata['lgd_buyermail']             = $customer['email'];    //구매자 이메일
             $pdata['lgd_timestamp']             = date('YmdHms');                         //타임스탬프
             $pdata['lgd_custom_skin']           = "red";                                //상점정의 결제창 스킨 (red, purple, yellow)
